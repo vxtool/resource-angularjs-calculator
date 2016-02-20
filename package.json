@@ -1,0 +1,27 @@
+{
+  "name": "resource-angularjs-calculator",
+  "version": "0.1.0",
+  "description": "Calculator with AngularJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/resource-solutions/resource-angularjs-calculator.git"
+  },
+  "keywords": [
+    "angularjs",
+    "resource",
+    "filter"
+  ],
+  "author": "Hemerson Vianna <hemerson.lourenco@gmail.com> (http://hemersonvianna.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/resource-solutions/resource-angularjs-calculator/issues"
+  },
+  "homepage": "https://github.com/resource-solutions/resource-angularjs-calculator#readme",
+  "devDependencies": {
+    "angular": "^1.5.0"
+  }
+}
