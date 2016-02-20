@@ -12,37 +12,15 @@
 	    </script>
       <link rel="stylesheet" type="text/css" href="source/css/style.css">
 	</head>
-	<body>
-    <div class="calculator" ng-controller="calculatorController">
-      <div class="screen">
-        <div class="screen-expression" ng-model="expression">{{ expression }}</div>
-        <div class="screen-result" ng-model="result">{{ result }}</div>
-      </div>
-      <div class="panel">
-        <div class="button" ng-click="clear()">C</div>
-        <div class="button" ng-click="sqrt()">√</div>
-        <div class="button" ng-click="square()">x²</div>
-        <div class="button" ng-click="backspace()">←</div>
-        <div class="button" ng-click="digit('7')">7</div>
-        <div class="button" ng-click="digit('8')">8</div>
-        <div class="button" ng-click="digit('9')">9</div>
-        <div class="button" ng-click="operate('/')">/</div>
-        <div class="button" ng-click="digit('4')">4</div>
-        <div class="button" ng-click="digit('5')">5</div>
-        <div class="button" ng-click="digit('6')">6</div>
-        <div class="button" ng-click="operate('*')">x</div>
-        <div class="button" ng-click="digit('1')">1</div>
-        <div class="button" ng-click="digit('2')">2</div>
-        <div class="button" ng-click="digit('3')">3</div>
-        <div class="button" ng-click="operate('-')">-</div>
-        <div class="button" ng-click="digit('0')">0</div>
-        <div class="button" ng-click="digit('.')">.</div>
-        <div class="button button--equals" ng-click="equals()">=</div>
-        <div class="button" ng-click="operate('+')">+</div>
-      </div>
-    </div>
+	<body ng-controller="IndexController">
+
+    <calculator></calculator>
 
     <script src="node_modules/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="node_modules/angular-route/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="source/js/app.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/js/directives/calculator-directive.js" type="text/javascript" charset="utf-8"></script>
+    <script src="source/js/controllers/index-controller.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
