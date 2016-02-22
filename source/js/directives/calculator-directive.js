@@ -39,7 +39,7 @@
         scope.clear = function() {
           scope.result = "0";
           scope.expression = "";
-          stack = [];
+
           operationPressed = false;
           equalsPressed = false;
         };
@@ -62,12 +62,20 @@
           scope.result = $rootScope.$eval(scope.expression);
           scope.expression += "= ";
 
+          if(isNaN(scope.result)){
+            scope.result = "0";
+          }
+
           equalsPressed = true;
         };
 
         scope.sqrt = function() {
           scope.result     = Math.sqrt(scope.expression);
           scope.expression = "";
+
+          if(isNaN(scope.result)){
+            scope.result = "0";
+          }
 
           operationPressed  = false;
           equalsPressed     = false;
@@ -77,13 +85,29 @@
           scope.result     = Math.pow(scope.expression, 2);
           scope.expression = "";
 
+          if(isNaN(scope.result)){
+            scope.result = "0";
+          }
+
           operationPressed  = false;
           equalsPressed     = false;
         };
 
         scope.backspace = function() {
+          var expressionEqual;
+          var resultSlice;
+          var resultPieces;
+
           scope.expression = scope.expression.slice(0, scope.expression.length - 1);
-          scope.result     = scope.result.slice(0, scope.result.length - 1);
+          expressionEqual  = scope.expression.indexOf('=') > 0;
+
+          if(expressionEqual){
+            scope.result = "";
+          } else {
+            resultSlice  = scope.result.slice(0, scope.result.length - 1);
+            resultPieces = scope.expression.split(/[-*+/]/);
+            scope.result = resultSlice !== "" ? resultSlice : resultPieces[resultPieces.length-1];
+          }
         };
       }
     }
